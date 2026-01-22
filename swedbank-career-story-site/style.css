@@ -1,0 +1,362 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --swedbank-orange: #ff6a13;
+  --swedbank-dark: #1f2430;
+  --swedbank-light: #f7f4f0;
+  --text-main: #22252f;
+  --text-muted: #616573;
+  --card-bg: #ffffff;
+  --border-soft: #e1e2e7;
+  --radius-xl: 18px;
+  --shadow-soft: 0 14px 30px rgba(15, 18, 32, 0.12);
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text-main);
+  background: linear-gradient(180deg, #fdfcfb 0%, #f3f2f0 60%, #f8f6f3 100%);
+  line-height: 1.6;
+}
+
+/* Layout helpers */
+
+.section {
+  padding: 4rem 1.5rem;
+}
+
+.section.alt {
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.section-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--swedbank-dark);
+}
+
+.section-intro {
+  max-width: 720px;
+  margin-bottom: 2rem;
+  color: var(--text-muted);
+}
+
+/* Hero */
+
+.hero {
+  background: radial-gradient(circle at top left, #ffe2cc 0%, #f7f4f0 45%, #f3f2f0 100%);
+  padding: 4.5rem 1.5rem 3.5rem;
+}
+
+.hero-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.3fr);
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+  color: var(--swedbank-dark);
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 540px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 999px;
+  background: rgba(255, 106, 19, 0.08);
+  color: var(--swedbank-dark);
+  margin-bottom: 0.75rem;
+}
+
+.hero-actions {
+  margin-top: 1.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Buttons */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.3rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease, border-color 0.12s ease;
+}
+
+.btn.primary {
+  background: var(--swedbank-orange);
+  color: #ffffff;
+  box-shadow: 0 10px 22px rgba(255, 106, 19, 0.35);
+}
+
+.btn.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(255, 106, 19, 0.45);
+}
+
+.btn.ghost {
+  background: #ffffff;
+  color: var(--swedbank-dark);
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+.btn.ghost:hover {
+  background: #f7f4f0;
+  transform: translateY(-1px);
+}
+
+/* Cards and grid */
+
+.hero-card {
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.hero-card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero-card ul {
+  list-style: none;
+}
+
+.hero-card li {
+  position: relative;
+  padding-left: 1.3rem;
+  margin-bottom: 0.45rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.hero-card li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--swedbank-orange);
+}
+
+/* Generic card */
+
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem 1.6rem;
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 10px 24px rgba(15, 18, 32, 0.06);
+}
+
+.card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.7rem;
+  color: var(--swedbank-dark);
+}
+
+.card p {
+  font-size: 0.98rem;
+  color: var(--text-muted);
+}
+
+.card ul {
+  list-style: none;
+  margin-top: 0.2rem;
+}
+
+.card li {
+  position: relative;
+  padding-left: 1.3rem;
+  margin-bottom: 0.35rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.card li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--swedbank-orange);
+}
+
+.card.highlight {
+  background: #1f2430;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.card.highlight h3 {
+  color: #ffffff;
+}
+
+.card.highlight li {
+  color: #e9ebf3;
+}
+
+.card.highlight li::before {
+  color: var(--swedbank-orange);
+}
+
+/* Grid */
+
+.grid {
+  display: grid;
+  gap: 1.7rem;
+}
+
+.grid.two {
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.2fr);
+}
+
+.grid.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* Tag */
+
+.tag {
+  margin-top: 0.75rem;
+  display: inline-flex;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  background: rgba(255, 106, 19, 0.08);
+  color: var(--swedbank-dark);
+}
+
+/* Repo link block */
+
+.repo-link {
+  margin-top: 2rem;
+  padding: 1.5rem 1.7rem;
+  border-radius: var(--radius-xl);
+  background: #ffffff;
+  border: 1px dashed rgba(31, 36, 48, 0.18);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.repo-link p {
+  color: var(--text-muted);
+  font-size: 0.96rem;
+}
+
+/* Footer */
+
+.footer {
+  padding: 2.5rem 1.5rem 2.8rem;
+  background: #1f2430;
+  color: #ffffff;
+}
+
+.footer-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer h3 {
+  margin-bottom: 0.4rem;
+}
+
+.footer p {
+  max-width: 540px;
+  color: #d2d5e0;
+  font-size: 0.95rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.9rem;
+  align-items: flex-end;
+}
+
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer span {
+  color: #c4c7d4;
+}
+
+/* Responsive */
+
+@media (max-width: 880px) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-card {
+    order: -1;
+  }
+
+  .grid.two {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .grid.three {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .repo-link {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-links {
+    align-items: flex-start;
+  }
+}
